@@ -134,6 +134,57 @@
                 <figcaption>Estructura de una sentencia CSS</figcaption>
             </figure>
             
+            <h3>Buenas prácticas</h3>
+            <ul>
+                <li>Escribe una regla por línea. Será mucho más fácil de leer y de modificar.</li>
+                <li>Usa la identación. Tras escribir el carácter { al empezaer un bloque de reglas, las propiedades se separan hacia la derecha.</li>
+                <li>El último punto y coma de un bloque de reglas es opcional, pero sí MUY recomendado.</li>
+                <li>Más tarde veremos reglas de compresión de código.</li>
+                <li>Veremos también algún tipo de metodología de orden y nombrado de selectores.</li>
+                <li>División de ficheros para mejorar la componetización.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Formas de inclusión de CSS en HTML</h2>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Mediente...</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>Archivo CSS externo</td>
+                    <td>Etiqueta &lt;link rel="stylesheet"&gt;</td>
+                    <td>El código se escribe en un archivo .css a parte. Recomendado</td>
+                </tr>
+                <tr>
+                    <td>Bloque de estilos</td>
+                    <td>Etiqueta &lt;style&gt;</td>
+                    <td>El código se escribe en una etiqueta &lt;style&gt; en el documento HTML</td>
+                </tr>
+                <tr>
+                    <td>Estilos en línea</td>
+                    <td>Atributo HTML style="..."</td>
+                    <td>El código se escribe en un atributo HTML style en una etiqueta</td>
+                </tr>
+            </table>
+
+            <h3>Archivo CSS externo</h3>
+            <p>- En el head:</p>
+            <pre>&lt;link rel="stylesheet" href="style.css"&gt;</pre>
+
+            <h3>Bloque de estilos en el mismo documento HTML</h3>
+            <figure>
+                <img src="img/index/estiloenhojahtml.jpg" alt="Estilo dentro de html" width="350" height="300" loading="lazy">
+                <figcaption>Ejemplo de aplicar css dentro de un documento HTML</figcaption>
+            </figure>
+
+            <h3>Estilos en línea</h3>
+            <pre>&lt;p&gt;¡Hola &lt;span style="color: red; padding: 8px;"&gt;amigo lector&lt;/span&gt;!&lt;/p&gt;</pre>
+        </section>
+        <section>
+            <h2>Ejemplo: Vamos a plicar CSS a un titulo h4</h2>
+            <h4>Este texto de subtítulo esta en rojo</h4>
         </section>
     </main>
     
