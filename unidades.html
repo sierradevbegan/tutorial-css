@@ -44,7 +44,141 @@
 
     <main>
         <h1>Unidades de medida</h1>
+        <p><strong>Contenido</strong></p>
+        <ul>
+            <li>¿Qué son las unidades y cuando se utilizan?</li>
+            <li>Unidades absolutas</li>
+            <li>Unidades relativas: %, em, rem</li>
+            <li>Unidades del viewport</li>
+            <li>Funciones de cálculo</li>
+            <li>Colores en CSS</li>
+        </ul>
+        <p>
+            En CSS las unidades de medida sirven para especificar las dimensiones de los elementos en una páginas web. Hay 2 tipos principales: unidades absolutas y unidades relativas.
+            Las absolutas tienen un valor fijo, mientras que las relativas se basan en el tamaño de otros elementos o del viewport.
+        </p>
+        <p><em>Ejemplo de aplicación de unidad (absoluta):</em></p>
+        <p>
+            <pre>
+                p{
+                    width: 700px;
+                } /* El ancho de los párrafos tendrán 700 píxels */
+            </pre>
+        </p>
+        <section>
+            <article>
+                <h2>Unidades absolutas</h2>
+                <p>
+                    Las unidades absolutas son siempre fijas, no cambian, son siempre iguales a una unidad de medida física. Por ejemplo el píxel.
+                    Para la web son poco adecuadas porque al final no se adaptan bien a las diferentes resoluciones de las pantallas.
+                </p>
+                <table border="1">
+                    <tr>
+                        <th colspan="4">Tipos de unidades absolutas</th>
+                    </tr>
+                    <tr>
+                        <th>Unidad</th>
+                        <th>Significado</th>
+                        <th>Medida aproximada</th>
+                        <th>Comentarios</th>
+                    </tr>
+                    <tr>
+                        <th>px</th>
+                        <td>Píxels</td>
+                        <td>1px = 0.26mm</td>
+                        <td>Para pantallas</td>
+                    </tr>
+                    <tr>
+                        <th>pt</th>
+                        <td>Puntos</td>
+                        <td>1pt = 0.35mm</td>
+                        <td>Para medios impresos</td>
+                    </tr>
+                    <tr>
+                        <th>in</th>
+                        <td>Pulgadas</td>
+                        <td>1in = 25.4mm</td>
+                        <td rowspan="5">Estas unidades son muy poco utilizadas</td>
+                    </tr>
+                    <tr>
+                        <th>cm</th>
+                        <td>Centímetros</td>
+                        <td>1cm = 10mm</td>
+                    </tr>
+                    <tr>
+                        <th>pc</th>
+                        <td>Picas</td>
+                        <td>1pc = 4.23mm</td>
+                    </tr>
+                    <tr>
+                        <th>mm</th>
+                        <td>Milímetros</td>
+                        <td>1mm = 1mm</td>
+                    </tr>
+                    <tr>
+                        <th>Q</th>
+                        <td>Cuarto de mm</td>
+                        <td>1Q = 0.248mm</td>
+                    </tr>
+                </table>
+                <p>
+                    De todas las unidades absolutas, las más utilizadas son <strong>px</strong> para pantallas y <strong>pt</strong> para impresión.
+                    Se pueden establecer hojas de estilo para imprimir, para eso está el atributo <em>media.</em>
+                </p>
+                <h3>CSS3 Media Types</h3>
+                <p>
+                    Son una forma de clasificar los dispositivos donde se mostrará un documento web, permitiendo aplicar estilos CSS específicos según el tipo de dispositivo (tipo de pantalla, dispositivo de impresión, dispositivos de voz, etc).
+                </p>
+                <p>
+                    <strong>- all:</strong> Se aplica a todos los dispositivos.
+                </p>
+                <p>
+                    <strong>- screen:</strong> Se aplica a pantallas de computadoras, tablets, smartphones, etc.
+                </p>
+                <p>
+                    <strong>- print:</strong> Se aplica a impresoras.
+                </p>
+                <p>
+                    <strong>- speech:</strong> Se aplica a dispositivos que leen el contenido en voz alta (lectores de pantalla).
+                </p>
+                <p>Ejemplo de aplicación:</p>
+                <p>
+                    <pre>&lt;link rel="stylesheet" href="css/style.css" media="screen"&gt;</pre>
+                    Esta hoja de estilo se va a aplicar para el medio screen.
+                </p>
+                <p>Importancia de los tipos de medios:</p>
+                <p>
+                    <strong>- Diseño responsive:</strong> Se adapta a diferentes pantallas y dispositivos.
+                </p>
+                <p>
+                    <strong>- Experiencia de usuario</strong>
+                </p>
+                <p>
+                    <strong>- Accesibilidad:</strong> Permiten adaptar el contenido para usuarios con discapacidades, como aquellos que utilizan lectores de pantalla.
+                </p>
+                <h3>Nota: Ojo con la densidad de píxels</h3>
+                <p>
+                    Dependiendo de la pantalla podemos tener una pulgada con una densidad de píxels de 10ppp y en cambio en otra pantalla con más densidad en una pulgada de 20ppp. 
+                    Es decir, al aplicar unidades píxels puede que no quede igual en unas pantallas que en otras.
+                </p>
+                <figure>
+                    <figcaption>Píxels por pulgada</figcaption>
+                    <img src="img/pixels.png" alt="Pixels por pulgada" width="472" height="295">
+                </figure>
+            </article>
+            <article>
+                <h2>Unidades relativas</h2>
+                
+            </article>
+        
 
+
+
+
+
+
+
+        </section>
     </main>
     
     <footer>
