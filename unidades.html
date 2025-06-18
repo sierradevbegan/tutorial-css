@@ -168,6 +168,77 @@
             </article>
             <article>
                 <h2>Unidades relativas</h2>
+                <p>
+                    Son un tipo de medida máas potente y habitual en el CSS que creamos generalmente.
+                    Al contrario que las unidades absolutas, las unidades relativas dependen de algún otro factor.
+                </p>
+                <p>
+                    <em>Tipos de unidades relativas:</em> 
+                </p>
+                <p><strong>- %: </strong>Relativa a herencia (concretamente al elemento padre) - 50% = mitad del padre</p>
+                <p><strong>- em/rem: </strong>Relativo al font-size en ese elemento - 1.5em = 1.5*16px (24px)</p>
+                <p><strong>- ex/rex: </strong>Relativo a la altura del caracter x minúscula.</p>
+                <p><strong>- ex/rex: </strong>Relativo al ancho del caracter 0</p>
+                <p><strong>- ex/rex: </strong>Relativo a la altura del primer caracter en mayúscula.</p>
+                <p><strong>- ex/rex: </strong>Relativo al ancho del glifo CJK (chino, japones, coreano)</p>
+                <p><strong>- ex/rex: </strong>Relativo al line-height en ese elemento.</p>
+                <p>
+                    Las más conocidas son %, em y rem, por lo que vamos a ver estas:
+                </p>
+                <p>
+                    <strong>La unidad de %:</strong> El valor de porcentaje establecido depende del tamaño del elemento padre inmediato.
+                </p>
+                <p>
+                    <strong>La unidad em:</strong> Se utiliza para definir un tamaño en base al tamaño que tiene establecido el navegador en la tipografía (tamaño fuente) en el elemento HTML actual donde se aplica. Por defecto, y para simplificar, se puede asumir que 1em es un valor aproximado a 16px. 2em serían 32px, 0.5em = 8px, etc.
+                </p>
+                <p>
+                    <strong>La unidad rem (root element):</strong> Esta unidad está prefijada por la letra r (root o raiz). Esta unidad toma la idea de la unidad em, pero en lugar de tomar el tamaño font-size del elemeto actual, toma el tamaño del elemento raiz, es decir, el elemento HTML o la pseudoclase :root. Esta forma nos permite trabajar con múltiplos del tamaño base.
+                </p>
+                <p>
+                    Ejemplo:
+                    <pre>
+                        :root{
+                            fontsize: 22px; /* tamaño base */
+                        }
+
+                        h1{
+                            font-size: 2rem; /*44px*/
+                        }
+                    </pre>
+                </p>
+                <p><strong>La unidad ex:</strong> Es una unidad menos conocida, que hace referencia al tamaño de alto de la 1ª letra minúscula de la tipografía. Podemos asumir que 1ex es aproximadamente 0.5em, es decir, la mitad del font-size del elemento actual.</p>
+            </article>
+            <article>
+                <h2>Unidades del viewport</h2>
+                <p>
+                    Existen unas unidades de nueva generación que resultan muy útiles, porque dependen del viewport (región visible de la página web en el navegador). Con estas unidades podemos hacer referencia a un porcentaje concreto del tamaño específico que tengamos en la pantalla del navegador.
+                    Es decir, cada vez que hagamos referencia a una unidad precedida por v estamos haciendo referencia a un % del tamaño total de la ventana. De esta forma, podemos hacer que elementos concretos tengan valores proporcionales al tamaño de la ventana del navegador.
+                </p>
+                <p><em>Tipos de unidades del viewport:</em></p>
+                <p><strong>- vw:</strong> viewport width: 1vw = 1% del ancho del navegador.</p>
+                <p><strong>- vh:</strong> viewport height: 1vh = 1% del alto del navegador.</p>
+                <p><strong>- vmin:</strong> viewport minimum: 1vmin = 1% del alto o ancho (el mínimo).</p>
+                <p><strong>- vmax:</strong> viewport maximum: 1vmax = 1% del alto o ancho (el máximo).</p>
+                <p><strong>- vi:</strong> viewport inline: Versión lógica inline de vw y/o vh.</p>
+                <p><strong>- vb:</strong> viewport block: Versión lógica en bloque de vw y/o vh.</p>
+                <p>
+                    <strong>La unidad vw (viewport width):</strong> La unidad vw es un tipo de unidad que hace referencia al ancho del viewport. Por ejemplo, si definimos 50vw estamos indicando un 50% del ancho actual del navegador.
+                </p>
+                <p>
+                    <strong>La unidad vh (viewport height):</strong> La unidad vh hace referencia de la misma forma al alto del viewport.
+                </p>
+                <p>
+                    <strong>La unidad vmin y vmax:</strong> De varios valores se queda con el máximo o con el mínimo.
+                </p>
+                <p>
+                    Consejo: La elección de las unidades es libre perointentaremos usar estas;
+                </p>
+                <p>
+                    <strong>px </strong> para distancias pequeñas (anchos de bode, margenes, etc), <strong>em/rem</strong> para tamaños de fuente, salvo que se quiera aprovechar en el diseño la composición de tamaños en cuyo caso se usarán porcentajes % y <strong>vw, vh y % </strong>para tamaños de elementos grandes y distribución de elementos por pantalla.
+                </p>
+            </article>
+            <article>
+                <h2>Funciones de cálculo</h2>
                 
             </article>
         
