@@ -166,6 +166,7 @@
                     <img src="img/pixels.png" alt="Pixels por pulgada" width="472" height="295">
                 </figure>
             </article>
+
             <article>
                 <h2>Unidades relativas</h2>
                 <p>
@@ -208,6 +209,7 @@
                 </p>
                 <p><strong>La unidad ex:</strong> Es una unidad menos conocida, que hace referencia al tamaño de alto de la 1ª letra minúscula de la tipografía. Podemos asumir que 1ex es aproximadamente 0.5em, es decir, la mitad del font-size del elemento actual.</p>
             </article>
+
             <article>
                 <h2>Unidades del viewport</h2>
                 <p>
@@ -237,9 +239,76 @@
                     <strong>px </strong> para distancias pequeñas (anchos de bode, margenes, etc), <strong>em/rem</strong> para tamaños de fuente, salvo que se quiera aprovechar en el diseño la composición de tamaños en cuyo caso se usarán porcentajes % y <strong>vw, vh y % </strong>para tamaños de elementos grandes y distribución de elementos por pantalla.
                 </p>
             </article>
+
             <article>
                 <h2>Funciones de cálculo</h2>
-                
+                <p>
+                    Hemos visto unidades relativas y absolutas pero en CSS también podemas hacer cuentas simples como +, -, * y / para calcular tamaños con funciones matemáticas.
+                    No son mas que funciones de apoyo que podemos utilizar en css para realizar cálculos u operaciones sencillas sin tener que abandonar CSS y/o recurrir a javascript. 
+                    Hay muchas funciones pero las más importantes son:
+                </p>
+                <p><strong>calc(): </strong>Permite calcular operaciones con unidades CSS como px, %, vw, vh u otras (incluso combinadas).</p>
+                <p><strong>min() / max(): </strong>Permite calcular el valor mínimo o máximo de las unidades indicadas.</p>
+
+                <h3>Funcion calc()</h3>
+                <p>
+                    En ocasiones necesitamos indicar valores precalculados por el navegador, ya porque sea más cómodo o porque queremos tener el código más organizado o ácil de mantener.
+                    Por ejemplo la suma de 2 valores que ha priori desconocemos pero que el navegador si puede calcularlo.
+                </p>
+                <p>
+                    Ejemplos:
+                    <pre>
+                        .elemento{
+                            width: calc(200px + 1em);
+                            height: 300px;
+                            background: blue;
+                        }
+
+                        article{
+                            width: calc(50% + 100px);
+                        }
+                    </pre>
+                    Article ocupará el 50% de la pantalla + 100px. Se deberá tener en cuenta elementos como márgenes o scroll ya que con % influye. Se podría sortear con vw poe ejemplo.
+                </p>
+
+                <h3>Funcion min() y max()</h3>
+                <p>
+                    En algunas ocasiones, necesitaremos que en una propiedad se aplique un valor entre varias posibilidades posibles, y lo que te interesa es el valor más pequeño (por ejemplo).
+                    CSS permite realizar esto utilizando la función min() que nos permite elegir el valor más pequeño de 2 o más posibilidades aplicadas por parámetro. (*max() devolverá el mayor de los valores).
+                </p>
+                <p>
+                    Ejemplo:
+                    <pre>
+                        .elemento{
+                            width: min(200px, 25%);
+                            height: 200px;
+                        }
+                        /* Si el 25% de la pantalla es menor que 200px se quedará con el 25%, pero si 200px es menor que el 25% de la pantalla se quedará con 200px. */
+                    </pre>
+                </p>
+            </article>
+
+            <article>
+                <h2>Colores en CSS</h2>
+                <p>
+                    Hay varias formas de establecer colores en CSS, vamos a ver las 3 más importantes:
+                </p>
+                <p><strong>red: </strong> Color mediante palabra clave</p>
+                <p><strong>rgb(): </strong> Usa una función rgb (rojo, verde, azul).</p>
+                <p><strong>#rrggbb: </strong> Notación rgb abreviada en hexadecimal (Recomendada)</p>
+                <p>Podemos hacer pruebas con estas 2 propiedades:</p>
+                <p><strong>color: </strong> Establece el color de la fuente</p>
+                <p><strong>background-color: </strong> Establece el color de fondo de un elemento.</p>
+                <div class="capacolor">
+                    Fuente en amarillo con <br> fonzo azul
+                    <pre>
+                        div{
+                            color: yellow;
+                            background-color: blue;
+                        }
+                    </pre>
+                </div>
+                <p>Podemos consultar en google Plabras clave color o sus formas rgb y hexadecimal.</p>
             </article>
         
 
