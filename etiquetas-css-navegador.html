@@ -44,7 +44,173 @@
     </header>
 
     <main>
+        <h1>CSS del navegador</h1>
+        <section>
+            <article>
+                <h2>Navegadores y motores render</h2>
+                <p>
+                    En un mundo ideal, todas las páginas web se verían correctamente y de la misma forma en todos los navegadores web disponibles, sin embargo, y una de las cosas que más llama la atención del diseño web cuando estamos empezando, es que no sólo debemos construir una web correctamente, sino que además debemos ser conscientes de los navegadores más utilizados, así como de sus características y virtudes.
+                </p>
+                <p>
+                    En un principio, el consorcio W3C se encarga de definir unas especificaciones y "normas" de recomendación, para que posteriormente, las compañías desarrolladoras de navegadores web las sigan y puedan crear un navegador correctamente.
+                </p>
+                <h3>Motores e interpretes de 5 navegadores</h3>
+                <p>
+                    <strong>Un navegador tiene siete segmentos, todos fundamentales para su funcionamiento</strong>. Estos segmentos son la interfaz de usuario o <em>user interface</em>, el motor de búsqueda o <em>browser engine</em>, el motor de renderización/renderizado o <em>rendering engine</em>, una sección de <em>networking</em>, un intérprete de JavaScript, un servidor de interfaz o <em>UI Backend</em> y una sección de persistencia de datos o <em>data persistance</em>.
+                </p>
+                <p>
+                    <strong>Cada navegador tiene su propio motor de renderizado e intérprete de JavaScript y los Motores e intérpretes de 5 navegadores</strong>. Un motor de renderizado es el encargado de mostrar el contenido que hemos solicitado. Es decir, este motor es el encargado de analizar y <em>parsear</em> el HTML o CSS que se obtiene como respuesta de una petición HTTP, para luego mostrarlo en pantalla.
+                </p>
+                <p>
+                    Esta aplicación que permite acceder a la información en internet mediante la interpretación de código html. es diferente al motor de búsqueda, que se encarga de interpretar el código HTML o CSS que le llega en la respuesta de la petición.
+                </p>
+                <p>
+                    Por su parte, como su nombre indica, un intérprete de JavaScript es el encargado de analizar y ejecutar el código JavaScript. A continuación, te enseñamos cuáles son los <strong>motores e intérpretes de 5 navegadores</strong>, los más populares en el mundo del desarrollo.
+                </p>
+                <p>
+                    <strong>Google Chrome</strong> - El motor de renderizado de Google Chrome es blink buscador y su intérprete de JavaScript es V8.
+                </p>
+                <p>
+                    <strong>Mozilla Firefox</strong> - El motor de renderizado de Mozilla Firefox es Gecko y su intérprete de JavaScript es SpiderMonkey.
+                </p>
+                <p>
+                    <strong>Safari</strong> - El motor de renderizado de Safari es WebKit y su intérprete de JavaScript es Nitro.
+                </p>
+                <p>
+                    <strong>Microsoft Edge</strong> - El motor de renderizado de Microsoft Edge es EdgeHTML y su intérprete de JavaScript es ChackraCore.
+                </p>
+                <p>
+                    <strong>Internet Explorer</strong> - El motor de renderizado de Internet Explorer es Trident y su intérprete de JavaScript es Chakra.
+                </p>
+                <h3>Otros detalles</h3>
+                <p>
+                    Como puedes ver en este listado de motores e intérpretes de 5 navegadores o esta aplicación que permite acceder a la información en internet mediante la interpretación del código html, cada navegador tiene un intérprete de JavaScript y un motor de renderización distinto. Esto puede ocasionar que nuestro código HTML, CSS e, incluso, código JavaScript o recursos externos <em>se comporten de una manera distinta</em>. Por ello, te recomendamos usar la página <strong>CanIUse</strong>, con la que te asegurarás de que el código que estás implementando está <em>medianamente soportado por los navegadores a los que estés apuntando</em>. Ahora que conoces los motores e intérpretes de 5 navegadores, puedes buscar la propiedad que quieres implementar para revisar su porcentaje de soporte en cada navegador.
+                </p>
+                <h3>Prefijos de navegador</h3>
+                <p>
+                    Algunas de las propiedades que veremos no están definidas por completo en todos los motores. Usando prefijos de motor de render, podemos utilizar varios prefijos para asegurarnos que aunque dichas funcionalidades tengan un comportamiento o sintaxis diferente en cada navegador, podemos hacer referencia a cada una de ellas por separado:
+                </p>
+                <p>
+                    <pre>
+                        div{
+	                        transform: … /* El navegador implementa la especificación oficial */
+                            -webkit-transform: … /* Chrome antiguo / Safari (Motor webkit) */
+                            -moz-transform: … /* Firefox antiguo (Motor Gecko) */
+                            -ms-transform: … /* Internet Explorer (Motor Trident) */
+                            -o-transform: … /* Opera antiguo (Motor Presto) */
+                        }
+                    </pre>
+                </p>
+            </article>
 
+            <article>
+                <h2>Inspector de elementos</h2>
+                <p>
+                    Inspeccionar elemento <strong>es una función de las Herramientas para desarrolladores de Chrome que permite inspeccionar y modificar los elementos web del frontend de una página</strong>. Con esta herramienta, es posible cambiar la apariencia y el contenido de una página web editando sus archivos CSS y HTML. 
+                </p>
+                <ol>
+                    <li>Introducción al Inspector de Elementos
+                        <ol>
+                            <li>Definición y propósito del Inspector de Elementos </li>
+                            <li>Acceso al Inspector de Elementos en Google Chrome</li>
+                        </ol>
+                    </li>
+
+                    <li>Estructura del Inspector de Elementos 
+                        <ol>
+                            <li>Visión general de la interfaz del Inspector de Elementos </li>
+                            <li>Panel de elementos y árbol DOM 
+                                <ol>
+                                    <li>Explicación de la jerarquía del árbol DOM </li>
+                                    <li>Navegación y selección de elementos</li>
+                                </ol>
+                            </li>
+                            <li>Panel de estilos y propiedades 
+                                <ol>
+                                    <li>Visualización de estilos aplicados </li>
+                                    <li>Modificación de estilos en tiempo real </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>Utilizando las herramientas del Inspector de Elementos 
+                        <ol>
+                            <li>Inspeccionar y editar elementos 
+                                <ol>
+                                    <li>Inspeccionar elementos en la página</li>
+                                    <li>Modificar atributos y contenido de elementos</li>
+                                </ol>
+                            </li>
+                            <li>Depurar y solucionar problemas
+                                <ol>
+                                    <li>Identificar errores de CSS y JavaScript </li>
+                                    <li>Depurar eventos y flujo de código </li>
+                                </ol>
+                            </li>
+                            <li>Optimizar rendimiento y carga de la página
+                                <ol>
+                                    <li>Evaluar tiempos de carga y recursos </li>
+                                    <li>Analizar y mejorar el rendimiento de la página</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>Funcionalidades avanzadas y trucos útiles 
+                        <ol>
+                            <li>Uso de atajos de teclado y comandos </li>
+                            <li>Pruebas de elementos y estilos en tiempo real</li>
+                            <li>Simulación de dispositivos </li>
+                            <li>Simulación de conexiones</li>
+                        </ol>
+                    </li>
+                </ol>
+            </article>
+
+            <article>
+                <h2>CSS por defecto</h2>
+                <p>
+                    Todos los navegadores tienen una hoja de estilos por defecto. Esto hará que los estilos luchen con la cascada que lo veremos en el tema siguiente.
+                </p>
+                <h3>Normalizar o Restablecer CSS</h3>
+                <p>
+                    Como regla, queremos que los elementos HTML se vean de la misma manera, independientemente del navegador que se use para verlos. Desafortunadamente, este no es el caso debido a la forma en que se ejecutan los navegadores.
+                </p>
+                <p>
+                    La cuestión de qué enfoque usar para eliminar las diferencias entre los estilos de agente de usuario es un debate en curso entre Normalizar CSS y Restablecer CSS. 
+                </p>
+                <p>
+                    <pre>
+                        h1{                       user agent stylesheet
+                            display: block;
+                            font-size: 2em;
+                            margin-block-start: 0.67em;
+                            margin-block-end: 0.67em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;
+                            font-weight: bold;
+                        } /* h1 estilos predeterminados en chrome */
+                    </pre>
+                </p>
+                <h3>Normalizar CSS</h3>
+                <p>
+                    Es un pequeño archivo CSS que proporciona coherencia entre navegadores en el estilo predeterminado de los elementos HTML.
+                    Eso significa que si miramos los estándares W3C de los estilos aplicados por los navegadores, y hay una inconsistencia en uno de los navegadores, los normalize.cssestilos arreglarán el estilo del navegador que tiene la diferencia. 
+                    Normalize.css es un proyecto de código abierto, continuamente actualizado en Github, creado por Nicolas Gallagher.
+                </p>
+                <p>Podemos descargar la hoja normalize.css:</p>
+                <p><a href="https://github.com/necolas/normalize.css/blob/master/normalize.css" target="_blank">Normalize.css</a></p>
+
+                <h3>Restablecer CSS</h3>
+                <p>
+                    Reset CSS adopta un enfoque diferente y dice que no necesitamos los estilos predeterminados de los navegadores en absoluto. Sean cuales sean los estilos que necesitemos, los definiremos en el proyecto según nuestras necesidades. Entonces, "Restablecer CSS" restablece todos los estilos que vienen con el agente de usuario del navegador. 
+                    Mucho más agresivo que Normalizar No heredaremos nada Tendremos que darle estilo a todo, lo que es normal
+                </p>
+                <p>Podemos descargar la hoja reset.css:</p>
+                <p><a href="https://meyerweb.com/eric/tools/css/reset/" target="_blank">Reset.css</a></p>
+            </article>
+
+        </section>
     </main>
     
     <footer>
