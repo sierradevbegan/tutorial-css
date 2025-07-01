@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial CSS</title>
+    <meta name="description" content="Tutorial de CSS donde aprenderemos a dar estilo a nuestras páginas web.">
+    <link rel="stylesheet" href="../css/estilo.css">
+  
+    <!-- Favicon y theme-color  -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../img/cabecera/css-logo.png" alt="Logo CSS" width="200" height="210">
+            <img src="../img/cabecera/titulo.png" alt="Titulo" width="714" height="110">
+        </div>
+        <p><a href="../index.html"><strong>INDICE</strong></a> / TEMA 1</p>
+        <ul>
+            <li>Introducción a CSS</li>
+            <li><a href="unidades.html">Unidades de medida</a></li>
+            <li><a href="etiquetas-css-navegador.html">Tipos de etiquetas y CSS del navegador</a></li>
+            <li><a href="cascada-especificidad.html">Cascada y especificidad</a></li>
+        </ul>
+        <hr>
+    </header>
+
+    <main>
+        <h1>Introducción a CSS</h1>
+        <section>
+            <h2>¿Que es CSS?</h2>
+            <p>
+                <strong>CSS (Cascading Style Sheets)</strong> es un lenguaje de diseño web que se utiliza para controlar la presentación visual de las páginas web. Permite definir el estilo de los elementos de una página, como colores, fuentes, tamaño, diseño y posicionamiento. En esencia, CSS se ocupa de cómo se ve el contenido estructurado por HTML. 
+            </p>
+
+            <h2>¿Cual es su propósito?</h2>
+
+            <h3>Separar el contenido del diseño</h3>
+            <p>
+                CSS permite que el contenido de una página web (definido en HTML) se separe del diseño visual. Esto facilita la gestión y actualización del diseño sin afectar el contenido. 
+            </p>
+
+            <h3>Dar estilo a los elementos HTML:</h3>
+            <p>
+                CSS se utiliza para aplicar estilos a elementos HTML, como párrafos, encabezados, imágenes y enlaces. 
+            </p>
+
+            <h3>Controlar la presentación visual:</h3>
+            <p>
+                CSS permite controlar diversos aspectos visuales, como colores, fuentes, tamaño, márgenes, espaciado, fondos, layouts y mucho más. 
+            </p>
+
+            <h3>Optimizar el rendimiento:</h3>
+            <p>
+                Al separar el contenido del diseño, CSS contribuye a optimizar el tiempo de carga de las páginas web. 
+            </p>
+
+            <h3>Hacer que las páginas web sean más atractivas:</h3>
+            <p>
+                Con CSS, los diseñadores pueden crear páginas web con diseños visualmente atractivos. 
+            </p>
+            <p>
+                En resumen, <em>CSS es un lenguaje esencial</em> para el desarrollo web que permite dar estilo y presentación a una página web, creando una experiencia visual atractiva y optimizada.. Si vas a dedicarte a la web en mayor o menor medida tendrás que conocer CSS ya que toda la web está hecha de HTML + CSS.
+            </p>
+            <figure>
+                <img src="../img/index/htmlcss.png" alt="Html y css" width="337" height="150" loading="lazy">
+                <figcaption>Base de toda página web</figcaption>
+            </figure>
+
+            <h3>Características:</h3>
+            <p>
+                <ol>
+                    <li>Lenguaje de texto plano, se puede desarrollar con cualquier editor</li>
+                    <li>Lenguaje nativo de los navegadores</li>
+                    <li>No necesita ser compilado ni transpilado</li>
+                    <li>No es un lenguaje de programación, es un lenguaje de marcado de la información</li>
+                    <li>Nació con internet</li>
+                </ol>
+            </p>
+        </section>
+        <section>
+            <h2>Estructura de una sentencia CSS</h2>
+            <p>
+                La estructura de un documento CSS en realidad no tiene estructura alguna. Es una relación de propiedades una detrás de otra sin orden establecido "a priori". Existen diferentes metodologías a la hora de ordenar las propiedades.
+            </p>
+            <p>
+                Los documentos de CSS son archivos de texto como HTML pero con la extensión .css.
+            </p>
+            <p>
+                En el código de un documento .css se escriben una serie de órdenes y el cliente (navegador) las interpreta y aplica a los documentos HTML.
+            </p>
+
+            <h3>Componentes CSS</h3>
+            <table>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>Selector</td>
+                    <td>Elemento o elementos del documento que vamos a seleccionar para aplicarle un estilo concreto</td>
+                </tr>
+                <tr>
+                    <td>Propiedad</td>
+                    <td>Característica principal que vamos a definir con el valor indicado a continuación</td>
+                </tr>
+                <tr>
+                    <td>Valor</td>
+                    <td>Cada propiedad tiene una serie de valores concretos asignables, con los que tendrá uno u otro comportamiento.</td>
+                </tr>
+                <tr>
+                    <td>Comentario</td>
+                    <td>Fragmento de texto entre /* y */ con anotaciones o aclaraciones para el desarrollador (el navegador los ignorará).</td>
+                </tr>
+                <tr>
+                    <td>Regla</td>
+                    <td>Par de propiedad y su respectivo valor asociado.</td>
+                </tr>
+            </table>
+            <figure>
+                <img src="../img/index/estructuracss.png" alt="Estructura css" width="460" height="200" loading="lazy">
+                <figcaption>Estructura de una sentencia CSS</figcaption>
+            </figure>
+            
+            <h3>Buenas prácticas</h3>
+            <ul>
+                <li>Escribe una regla por línea. Será mucho más fácil de leer y de modificar.</li>
+                <li>Usa la identación. Tras escribir el carácter { al empezaer un bloque de reglas, las propiedades se separan hacia la derecha.</li>
+                <li>El último punto y coma de un bloque de reglas es opcional, pero sí MUY recomendado.</li>
+                <li>Más tarde veremos reglas de compresión de código.</li>
+                <li>Veremos también algún tipo de metodología de orden y nombrado de selectores.</li>
+                <li>División de ficheros para mejorar la componetización.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Formas de inclusión de CSS en HTML</h2>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Mediente...</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>Archivo CSS externo</td>
+                    <td>Etiqueta &lt;link rel="stylesheet"&gt;</td>
+                    <td>El código se escribe en un archivo .css a parte. Recomendado</td>
+                </tr>
+                <tr>
+                    <td>Bloque de estilos</td>
+                    <td>Etiqueta &lt;style&gt;</td>
+                    <td>El código se escribe en una etiqueta &lt;style&gt; en el documento HTML</td>
+                </tr>
+                <tr>
+                    <td>Estilos en línea</td>
+                    <td>Atributo HTML style="..."</td>
+                    <td>El código se escribe en un atributo HTML style en una etiqueta</td>
+                </tr>
+            </table>
+
+            <h3>Archivo CSS externo</h3>
+            <p>- En el head:</p>
+            <pre>&lt;link rel="stylesheet" href="style.css"&gt;</pre>
+
+            <h3>Bloque de estilos en el mismo documento HTML</h3>
+            <figure>
+                <img src="../img/index/estiloenhojahtml.jpg" alt="Estilo dentro de html" width="350" height="300" loading="lazy">
+                <figcaption>Ejemplo de aplicar css dentro de un documento HTML</figcaption>
+            </figure>
+
+            <h3>Estilos en línea</h3>
+            <pre>&lt;p&gt;¡Hola &lt;span style="color: red; padding: 8px;"&gt;amigo lector&lt;/span&gt;!&lt;/p&gt;</pre>
+        </section>
+        <section>
+            <h2>Ejemplo: Vamos a aplicar CSS a un titulo h4</h2>
+            <h4>Este texto de subtítulo esta en rojo</h4>
+        </section>
+    </main>
+    
+    <footer>
+        <hr>
+        <p><a href="../index.html"><strong>INDICE</strong></a> / TEMA 1</p>
+        <ul>
+            <li>Introducción a CSS</li>
+            <li><a href="unidades.html">Unidades de medida</a></li>
+            <li><a href="etiquetas-css-navegador.html">Tipos de etiquetas y CSS del navegador</a></li>
+            <li><a href="cascada-especificidad.html">Cascada y especificidad</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
