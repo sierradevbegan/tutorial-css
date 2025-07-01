@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial CSS</title>
+    <meta name="description" content="Tutorial de CSS donde aprenderemos a dar estilo a nuestras páginas web.">
+    <link rel="stylesheet" href="../css/estilo.css">
+  
+    <!-- Favicon y theme-color  -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../img/cabecera/css-logo.png" alt="Logo CSS" width="200" height="210">
+            <img src="../img/cabecera/titulo.png" alt="Titulo" width="714" height="110">
+        </div>
+        <p><a href="../index.html"><strong>INDICE</strong></a> / TEMA 2</p>
+        <ul>
+            <li>Selectores Parte 1</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <hr>
+    </header>
+
+    <main>
+        <h1>SELECTORES (Parte 1)</h1>
+        <p>
+            En CSS, los selectores son patrones que identifican los elementos HTML a los que se aplicarán estilos. Son la primera parte de una regla CSS y determinan a qué elementos se aplicarán las propiedades y valores definidos en esa regla. En esencia, los selectores indican al navegador qué elementos de la página web deben ser estilizados. 
+        </p>
+        <section>
+            <article>
+                <h2>Selector Universal (*{...})</h2>
+                <p>
+                    Se utiliza para seleccionar todos los elementos de la página. El siguiente ejemplo elimina el margen y el relleno de todos los elementos HTML:
+                </p>
+                <p>
+                    <pre>
+                        *{
+                            margin: 0px;
+                            padding: 0px;
+                        }
+                    </pre>
+                    No es muy utilizado ya que es difícil que un estilo se aplique a todos los elementos de una página, no obstante, si que se suele combinar con otros selectores y además forma parte de algunos hacks muy utilizados que ya veremos.
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector de Etiqueta (etiqueta{...})</h2>
+                <p>
+                    Selecciona todos los elementos de la página cuya etiqueta HTML coincide con el valor del selector. El siguiente ejemplo selecciona todos los párrafos y pone la fuente en azul:
+                </p>
+                <p>
+                    <pre>
+                        p{
+                            color: blue;
+                        }
+                    </pre>
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector de Clase (.valorclass{...})</h2>
+                <p>
+                    El atributo <em>class</em> es básico de todas las etiquetas: &lt;p class="estiloparrafo"&gt;. Puede haber varias etiquetas con el mismo valor en el atributo class.
+                </p>
+                <figure>
+                    <img src="../img/selectorclase.jpg" alt="Selector de Clase" width="660" height="412">
+                    <figurecaption>Ejemplo de selector de clase</figurecaption>
+                </figure>
+                <p>
+                    En este ejemplo, el primer párrafo y el div serán azules y tendrán texto en negrita, ya que comparten la clase "destacado". El segundo párrafo no se verá afectado por el estilo .destacado porque no tiene esa clase asignada.
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector Multiclase (.valorclass1.valorclass2{...})</h2>
+                <p>
+                    Al atributo class también se le pueden añadir más de un valor separados por un espacio:
+                </p>
+                <figure>
+                    <img src="../img/selectormulticlase.jpg" alt="Selector multiclase">
+                    <figurecaption>Ejemplo de Selector Multiclase</figurecaption>
+                </figure>
+                <p>
+                    En este caso, el párrafo se mostrará con texto en negrita y color rojo, además de un fondo amarillo y relleno de 10px.
+                </p>
+                <p>
+                    Ademas podemos combinar los selectores (Selector multiclase) y hacer que esas 2 clases tengan la fuente Verdana.
+                    <pre>
+                        .importante.destacado{
+                            font-family: Verdana;
+                        }
+                    </pre>
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector ID (#valorid{...})</h2>
+                <p>
+                    Selecciona un elemento por su <em>id</em>. El valor del id de un elemento tiene que ser único en una página, ya que es como el dni de una etiqueta.
+                </p>
+                <p>
+                    <pre>
+                        #miid{
+                            font-weight: bold;
+                        }
+                    </pre>
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector Mixto</h2>
+                <p>
+                    Se pueden combinar los selectores (etiqueta, id y clase) de diferentes maneras:
+                </p>
+                <p>
+                    <strong>- *.destacado{...}: </strong> Selector universal + clase: En este caso se puede quitar el selector universal porque solo con .destacado ya está seleccionando todos los elementos que tengan esa clase.
+                </p>
+                <p>
+                    <strong>- p.destacado{...}: </strong> Selector etiqueta + clase: Esto lo que hace es que a todos los <em>p</em> que tengan <em>class="destacado"</em>.
+                </p>
+                <p>
+                    <strong>- .destacado.importante{...}: </strong> Selector clase + clase: Selecciona todos los elementos que en su atributo class contenga estos 2 valores.
+                </p>
+                <p>
+                    <strong>- div#miid{...}: </strong> Selector de etiqueta + ID.
+                </p>
+                <p>
+                    <strong>- #miid.destacado{...}: </strong> Selector de id + clase: Esto tendrá más sentido cuando le demos interactividad.
+                </p>
+            </article>
+
+            <article>
+                <h2>Especificidad</h2>
+                <p>
+                    Tenemos que saber cuanto de importante es la especificidad de un selector, porque a la hora de aplicarse la cascada de estilos lo va a tener muy en cuenta.
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector de atributos básicos</h2>
+                <p>Hay muchas formas de seleccionar elementos con determinados atributos. El más sencillo será <em>etiqueta[atributo]</em>, con esto hemos seleccionado cualquier etiqueta que tenga ese atributo, da igual el valor. Ejemplos:</p>
+                <p>
+                    <pre>
+                        p[class]{...}
+                    </pre>
+                    Esto selecciona todos los párrafos que tengan el atributo class, da igual el valor que tenga.
+                </p>
+                <p>
+                    <pre>
+                        p[class="destacado"]{...}
+                    </pre>
+                    Con esto seleccionamos todos los párrafos que tengan el atributo class y que su valor sea destacado.
+                </p>
+                <p>
+                    <pre>
+                        p[class="destacado importante"]{...}
+                    </pre>
+                    Aquí seleccionamos todos los p que en su atributo class esté definido con destacado e importante.
+                </p>
+                <p>Vale para cualquier tipo de atributo:</p>
+                <p>
+                    <pre>
+                        *[href]{...}
+                    </pre>
+                    Con esto seleccionamos todos los elementos que tengan establecido el atributo href.
+                </p>
+                <p>
+                    <pre>
+                        *[href="www.google.com"]{...}
+                    </pre>
+                    Con esto seleccionamos todos los elementos que tengan el atributo href y que apunten a google.
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector de Atributos Avanzados</h2>
+                <p>
+                    <strong>[nombre_atributo]</strong>, selecciona los elementos que tienen establecido el atributo llamado nombre_atributo, independientemente de su valor.
+                </p>
+                <p>
+                    <pre>
+                        [disabled]{
+                            background: grey;
+                        }
+                    </pre>
+                    Seleccionará todos los elementos que tengan el atributo disabled. Esto puede verse por ejemplo en un formulario.
+                </p>
+                <p>
+                    <pre>
+                        a[rel="nofollow"]{
+                            background: red;
+                        }                        
+                    </pre>
+                    Seleccionamos todos los enlaces que tengan el atributo rel con el valor nofollow.
+                </p>
+                <p>
+                    <strong>[nombre_atributo~="happy"]</strong> Seleccionamos todos los elementos que tengan el atributo nombre_atributo y que <strong>al menos uno de sus valores</strong> sea happy.
+                </p>
+                <p>
+                    <pre>
+                        &lt;div data-mod="happy sad"&gt;
+
+                         [data-mod~="happy"]{
+                            ...
+                            ...
+                         }
+                    </pre>
+                    Seleccionamos todos los elementos que tengan el atributo data-mod y que <strong>al menos uno de sus valores</strong> sea happy.
+                </p>
+                <p>
+                    <strong>[nombre_atributo|="valor"] </strong> Selecciona los elementos que tienen establecido el atributo nombre_atributo y cuyo valor es una serie de palabras separadas con guiones, pero que comienza con "valor". Este tipo de selector sólo es útil para los atributos de tipo <em>lang</em> que indican el idioma del contenido del elemento.
+                </p>
+                <p>
+                    <pre>
+                        &lt;div lang="es-MX en-EN"&gt;English&lt;/div&gt;
+
+                        [lang|="es"]{
+                            ...
+                            ...
+                        }
+                    </pre>
+                    Seleccionamos aquellos elementos que tengan el atributo lang y que el valor del atributo comienze por "es".
+                </p>
+                <p><em>Básicos</em></p>
+                <p>
+                    <strong>[href] </strong> Si tiene un atributo href.
+                </p>
+                <p>
+                    <strong>[href="#top"] </strong> Si tiene un atributo href y su valor es "#top".
+                </p>
+                <p>
+                    <strong>[class~="destacado"] </strong> Si tiene un atributo class con una lista de valores y uno de ellos es destacado.
+                </p>
+                <p>
+                    <strong>[lang|="es"] </strong> Si tiene un atributo lang con una lista de valores, donde uno empieza por "es".
+                </p>
+                <p><em>Avanzados</em></p>
+                <p>
+                    <strong>[href^="https://"] </strong> Si tiene atributo href y su valor comienza por https://.
+                </p>
+                <p>
+                    <strong>[href$=".pdf"] </strong> Si tiene un atributo href y su valor termina por .pdf (un enlace a un pdf).
+                </p>
+                <p>
+                    <strong>[href*="tacad"] </strong> Si tiene un atributo href y su valor contiene en cualquier sitio tacad.
+                </p>
+
+            </article>
+        </section>
+    </main>
+    
+    <footer>
+        <hr>
+        <p><a href="../index.html"><strong>INDICE</strong></a> / TEMA 2</p>
+        <ul>
+            <li>Selectores Parte 1</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </footer>
+</body>
+</html>
