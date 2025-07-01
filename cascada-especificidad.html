@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial CSS</title>
+    <meta name="description" content="Tutorial de CSS donde aprenderemos a dar estilo a nuestras páginas web.">
+    <link rel="stylesheet" href="css/estilo.css">
+  
+    <!-- Favicon y theme-color  -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="img/cabecera/css-logo.png" alt="Logo CSS" width="200" height="210">
+            <img src="img/cabecera/titulo.png" alt="Titulo" width="714" height="110">
+        </div>
+        <p><strong>INDICE</strong></p>
+        <ul>
+            <li><a href="index.html">Introducción a CSS</a></li>
+            <li><a href="unidades.html">Unidades de medida</a></li>
+            <li><a href="etiquetas-css-navegador.html">Tipos de etiquetas y CSS del navegador</a></li>
+            <li>Cascada y especificidad</li>
+        </ul>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+        <h1>Cascada y especificidad</h1>
+        <article>
+            <h2>¿Por qué se llaman estilos en cascada?</h2>
+            <p>
+                La <em>cascada</em> en CSS se refiere a como se aplican diferentes estilos en orden de prioridad, permitiendo que estilos definidos en diferentes lugares (como hojas de estilo externas, estilos internos en HTML o estilos en linea) se combinen y anulen entre sí según ciertas reglas.
+            </p>
+            <p>
+                Cuando un elemento está contenido en otro (por ejemplo un p dentro de un div), al elemento de dentro se le aplican también las propiedades definidas para el elemento de fuera (a p se le aplican las propiedades definidas para div, "Algunas se aplican y otras no").
+            </p>
+            <p>
+                Si las propiedades (escritas en diferentes sitios o para diferentes elementos) no entran en conflicto, el navegador aplica todas las propiedades. Por ejemplo, si el color de fondo de un elemento está definido en un sitio y el tamaño de la letra en otro sitio, el navegador aplicará ambas propiedades al elemento.
+            </p>
+            <p>
+                Pero si las propiedades entran en conflicto (por ejemplo el color de fondo de un elemento está definido en varios sitios con colores diferentes), existen reglas para decidir que propiedad tiene preferencia.
+            </p>
+            <p>
+                Ejemplo básico de conflicto:
+                <pre>
+                    p{color:red;}
+                    p{color: blue;}
+                    /* En este caso se verá en azul porque es el último que se ha establecido.*/
+                </pre>
+            </p>
+            <p>
+                CSS tiene un mecanismo de resolución de colisiones muy complejo y que tiene en cuenta:
+            </p>
+            <p>
+                <ul>
+                    <li>Tipo de hoja de estilo (de navegador, de usuario o de diseñador)</li>
+                    <li>La importancia de cada regla</li>
+                    <li>Y lo específico que sea el selector</li>
+                </ul>
+            </p>
+            <p>
+                <em>El método seguido por CSS para resolver las colisiones:</em>
+            </p>
+            <p>
+                <ol>
+                    <li>Determinar todas las declaraciones que se aplican al elemento para el medio CSS seleccionado.</li>
+                    <li>Ordenar las declaraciones según su origen (css del navegador, de usuario o de diseñador) y su prioridad (palabra clave <strong>!important</strong>)</li>
+                    <li>Ordenar las declaraciones según lo específico que sea el selector. Cuanto más genérico es un selector, menos importancia tienen sus declaraciones.</li>
+                    <li>Si después de aplicar las normas anteriores existen 2 o más reglas con la misma prioridad, se aplica la que se indicó en último lugar.</li>
+                </ol>
+            </p>
+            <p>
+                Hasta que no se expliquen más adelante los conceptos de tipo de hoja de estilo y la prioridad, el mecanismo simplificado que se puede aplicar es el siguiente: <em>Cuanto más específico sea un selector, más importancia tiene su regla asociada y a igual especificidad, se considera la última regla aplicada.</em>
+            </p>
+        </article>
+        </section>
+
+    </main>
+    
+    <footer>
+        <hr>
+        <p><strong>INDICE</strong></p>
+        <ul>
+            <li><a href="index.html">Introducción a CSS</a></li>
+            <li><a href="unidades.html">Unidades de medida</a></li>
+            <li><a href="etiquetas-css-navegador.html">Tipos de etiquetas y CSS del navegador</a></li>
+            <li>Cascada y especificidad</li>
+        </ul>
+    </footer>
+</body>
+</html>
