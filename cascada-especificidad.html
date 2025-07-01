@@ -93,6 +93,100 @@
             <p>
                 Hasta que no se expliquen más adelante los conceptos de tipo de hoja de estilo y la prioridad, el mecanismo simplificado que se puede aplicar es el siguiente: <em>Cuanto más específico sea un selector, más importancia tiene su regla asociada y a igual especificidad, se considera la última regla aplicada.</em>
             </p>
+            <p>
+                La cascada comprende varios temas importantes a la hora de resolver dichos conflictos:
+            </p>
+            <p>
+                <strong>- Importancia: </strong> Los estilos pueden tener una importancia concreta, eso le da mayor o menor prioridad. Existe la posibilidad de añadir el texto <strong>!important </strong> al final de una regla, consiguiendo que el navegador le de prioridad a la hora de evaluar dichos estilos sobre otros.
+            </p>
+            <p>
+                <pre>
+                    .classestilo{
+                        color: red!important;
+                    }
+                    .classestilo{
+                        color: blue;
+                    }
+                </pre>
+                Aunque el color azul está definido el último, se verá rojo porque hemos añadido <em>!important</em>. <strong>Cuanto menos se utilize mejor.</strong>
+            </p>
+            <p>
+                <strong>- Origen: </strong> Existen varios orígenes de CSS, cada uno con una prioridad específica. Normalmente se va a hacer referencia al CSS del autor.
+            </p>
+            <ol>
+                <li>Hoja de estilos CSS que aplica el navegador por defecto.</li>
+                <li>Hoja de estilo de usuario. Estilos que añade el usuario desde su navegador para personalizarlo <em>(UserStyles - estilos de usuario)</em></li>
+                <li>Hoja de estilos de autor/diseñador: Estilos CSS que crea el desarrollador en la página web.</li>
+            </ol>
+            <p>
+                <strong>- Origen de aparición: </strong> El orden en el que se procesa el CSS influye a la hora de resolver conflictos. A igual especificidad se cumplirá la última. El estilo CSS a un documento se puede aplicar de varias formas:
+            </p>
+            <ol>
+                <li>Atributo <em>style</em> en una etiqueta HTML (+ prioridad)</li>
+                <li>Bloque de estilos en el documento HTML.</li>
+                <li>Archivo CSS <em>externo</em> referenciado mediante <em>link rel="stylesheet"</em></li>
+            </ol>
+            <p>
+                <strong>- Especificidad: </strong> Cuanto más específicos sean los estilos CSS, mayor prioridad (lo veremos bien más adelante). En el caso de que tengamos un conflicto donde no se haya eliminado la ambigüedad, se pasa a calcular el selector más específico siguiendo unas normas:
+            </p>
+            <ol>
+                <li>Componente ID</li>
+                <li>Componente Clase</li>
+                <li>Componente Elemento</li>
+            </ol>
+            <p>Ejemplo de menos a más específico:</p>
+            <ul>
+                <li><strong>div{...}</strong> /* 0,0,1 (un elemento) */</li>
+                <li><strong>div div{...}</strong> /* 0,0,2 (2 elementos) */</li>
+                <li><strong>#pagina div{...}</strong> /* 1,0,1 (1 id y un elemento) */</li>
+                <li><strong>#pagina div:hover{...}</strong> /* 1,1,1 (1 id, 1 pseudoclase y 1 elemento) */</li>
+                <li><strong>#pagina div:hover a{...}</strong> /* 1,1,2 (1 id, 1 pseudoclase, 2 elementos) */</li>
+                <li><strong>#pagina .sel:hover>a{...}</strong> /* 1,2,1 (1 id, 1 clase, 1 pseudoclase y un elemento) */</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Herencia</h2>
+            <p>
+                Debemos saber que algunas propiedades CSS, como <em>color o font-family</em>, se heredan desde los elementos HTML padres a los elementos HTML hijos, modificando el valor que tienen por defecto.
+            </p>
+            <figure>
+                <img src="img/herencia.jpg" alt="Ejemplo herencia" width="642" height="530">
+                <figurecaption>Ejemplo de Herencia en CSS</figurecaption>
+            </figure>
+            <p>
+                Es intuitivo y razonable que unas cosas sean heredables y otras no, por ejemplo el borde, no es lógico que todo lo que cuelgue de .padre herede un borde.
+            </p>
+            <h3>Valores especiales de Herencia</h3>
+            <p>
+                También podemos aplicar ciertos valores especiales que son comunes a todas las propiedades CSS existentes. Con estos valores modificamos el comportamiento de la herencia en dicha propiedad:
+            </p>
+            <ul>
+                <li><strong>inherit:</strong> La propiedad hereda el valor que tiene la misma propiedad CSS en su elemento padre (si hereda).</li>
+                <li><strong>initial: </strong> Establece el valor al valor inicial definido por la especificación CSS (no hereda).</li>
+                <li><strong>unset: </strong> Resetea el valor. En propiedades heredables, actúa como inherit, en otro caso, como initial.</li>
+                <li><strong>revert: </strong>Similar a unset, salvo que haya definido un origen de agente o de usuario (ver más adelante).</li>
+            </ul>
+            <p>
+                <pre>
+                    .container{
+                        color: green;
+                        border: 1px solid red;
+                    }
+                    .child{
+                        border: inherit;
+                        <em>color: initial;</em>
+                    }
+                </pre> 
+                Ahora .child si heredará border, igual que su elemento padre porque le hemos especificado que lo herede. Si por ejemplo a .child le especificamos que color sea initial ya no va a heredar el color.
+            </p>
+        </article>
+
+        <article>
+            <h2>!important</h2>
+            <p>
+                Un buen diseño debe tener los mínimos !important posibles y si se puede, ninguno. Es muy fácil caer en la tentación cuando algo no se aplica como tu quieres. Si tenemos que poner alguno es porque o no entendemos la cascada de CSS, o porque no sabemos seleccionar correctamente el elemento o porque queremos salir del paso.
+            </p>
         </article>
         </section>
 
