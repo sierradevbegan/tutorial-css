@@ -44,7 +44,80 @@
 
     <main>
         <h1>SELECTORES (Parte 2)</h1>
-        
+        <section>
+            <ul>
+                <li>Selector descendente</li>
+                <li>Selector de hijo</li>
+                <li>Selector de hermano adyacente</li>
+                <li>Selector de hermanos</li>
+                <li>Selector múltiple</li>
+                <li>La importancia de un hermano y un punto</li>
+                <li>Especificidad</li>
+            </ul>
+        </section>
+        <section>
+            <article>
+                <h2>Selector descendente</h2>
+                <p>
+                    Es la forma de seleccionar ciertos elementos que están dentro de otros elementos. Su sintaxis se basa en colocar los elementos uno a continuación de otro <strong>separados por un espacio</strong>.
+                </p>
+                <p>
+                    <pre>
+                        div#page div{
+                            background-color: gold;
+                        }
+                    </pre>
+                    Selecciona los div que están dentro de div id="page".
+                </p>
+                <p>
+                    En el ejemplo anterior, aplicamos los estilos CSS (color fondo dorado) a todos los elementos div que estén dentro de &lt;div id="page"&gt;. Si existe un div fuera del elemento &lt;div id="page"&gt; no se aplicarán los estilos indicados.
+                </p>
+                <figure>
+                    <img src="../img/selector-descendente.jpg" width="614" height="305" alt="Selector Descendiente">
+                    <figurecaption>Ejemplo de Selector Descendiente</figurecaption>
+                </figure>
+                <p>
+                    Como vemos en la imágen <em>div#page div</em> selecciona todos los div que contiene dentro, da igual hijo que nieto, es decir, en cualquier nivel de jerarquía.
+                </p>
+                <p>
+                    Se pueden construir selectores muy complejos con tantos elementos descendientes como se quiera, pero una buena práctica es intentar mantenerlos lo más simples posibles.
+                </p>
+                <p>
+                    En el siguiente ejemplo vamos a ver 2 maneras diferentes de seleccionar un mismo elemento:
+                </p>
+                <figure>
+                    <img src="../img/selector-descendente2.jpg" alt="Código HTML" width="507" height="257">
+                    <figurecaption>Código HTML para ejemplo seleccionar descendencia.</figurecaption>
+                </figure>
+                <figure>
+                    <img src="../img/selector-descendente3.jpg" alt="Formas seleccionar descendencia">
+                    <figurecaption>Formas de seleccionar descendencia</figurecaption>
+                </figure>
+                <p>
+                    En ambos casos vamos a seleccionar los a (enlaces).
+                </p>
+                <ul>
+                    <li>- En el primer caso va a seleccionar los a, que estén dentro de un li, que a suvez esté dentro de un ul, que a su vez esté dentro de una clase .options y que a su vez esté dentro de una clase .menu y me los pintas de naranja.</li>
+                    <li>- En el segundo caso (más general) seleccionará todos los a que sean descendientes de la clase .menu.</li>
+                </ul>
+                <p>Se recomienda simplicidad.</p>
+            </article>
+
+            <article>
+                <h2>Selector de hijo (#miid > div)</h2>
+                <p>
+                    Un elemento hijo es aquel que cuelga directamente del elemento padre. Solo se seleccionará los hijos directos.
+                </p>
+                <p>
+                    Sintaxis:
+                    <pre>#page > div{...}</pre>
+                </p>
+                <figure>
+                    <img src="../img/selector-hijo.jpg" alt="Selector Hijo" width="655" height="331">
+                    <figurecaption>Selector de Hijo</figurecaption>
+                </figure>
+            </article>
+        </section>
     </main>
     
     <footer>
