@@ -116,6 +116,104 @@
                     <img src="../img/selector-hijo.jpg" alt="Selector Hijo" width="655" height="331">
                     <figurecaption>Selector de Hijo</figurecaption>
                 </figure>
+                <p>
+                    Ahora en esta imagen vemos como únicamente se han seleccionado los hijos directos de #page.
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector Hermano (a ~ b)</h2>
+                <p>
+                    Un elemento es hermano de otro cuando tiene el mismo padre.
+                    <pre>
+                        &lt;footer&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a ......&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a ......&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a ......&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/footer&gt;
+                    </pre>
+                    En este caso los li son hermanos. Los a no porque no son hijos del mismo padre, y tanto ul como footer son hijos únicos.
+                </p>
+                <p>
+                    Se pueden seleccionar los hermanos con el selector hermano general, simbolizado con el caracter <strong>~</strong>.
+                </p>
+                <p>
+                    <strong>a ~ b</strong> Selecciona aquellos elementos de tipo b que sean hermanos de elemento de tipo a.
+                </p>
+                <figure>
+                    <img src="../img/selector-hermano.jpg" alt="Selector de hermanos" width="649" height="325">
+                    <figurecaption>Ejemplo de Selector de hermanos</figurecaption>
+                </figure>
+                <p>
+                    Esete ejemplo, selecciona aquellos strong que sean hermanos de otro elemento strong que sea descendiente de div.post.
+                </p>
+                <p>
+                    Como vemos no es necesario que el elemento strong se encuentre adyacente al primero, sino que basta con que esté a continuación y sean hermanos en el mismo nivel.
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector de hermano/s adyacente/s. (a + b)</h2>
+                <p>
+                    Este es un selector aún más específico. Un hermano adyacente es una etiqueta que es tu hermana pero está a continuación de ti. Aquellos elementos que están directamente a continuación del elemento especificado. Mediante el símbolo <strong>+</strong> del selector hermano adyacente se pueden seleccionar aquellos elementos hermanos que están seguidos el uno del otro (en el mismo nivel).
+                </p>
+                <p>
+                    <strong>a + b</strong> Selecciona los b que son hermanos de a y que están justamente a continuación de a. Ojo a + b selecciona el elemento b, no el a.
+                </p>
+                <p>Ejemplo sintaxis: <strong>div.post span + span{...}</strong></p>
+                <figure>
+                    <img src="../img/selector-hermano-adyacente.jpg" alt="Selector Hermano Adyacente" width="570" height="288">
+                    <figurecaption>Ejemplo de selector hermano adyacente</figurecaption>
+                </figure>
+                <p>
+                    Este ejemplo selecciona los elementos span adyacentes que son hermanos de otro span y descienden de div.post.
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector múltiple (a, b, c)</h2>
+                <p>
+                    Va a servir cuando queremos aplicar los mismos estilos a un conjunto de elementos.
+                    <pre>
+                        .class1, .class2, .class3{...} 
+                        h1, h2, p, .miclase{...}
+                    </pre>
+                </p>
+                <p>
+                    <em>Se pueden combinar todos los tipos de selectores que hemos visto.</em>
+                </p>
+            </article>
+
+            <article>
+                <h2>Selector universal II (*)</h2>
+                <p>
+                    Como ya hemos visto más selectores podemos usar * de diferentes maneras. Es como un comodín, cualquier elemento.
+                    <pre>
+                        div#menu *{...}
+                    </pre>
+                    Aquí estamos seleccionando cualquier elemento que sea descendiente de div#menu.
+                </p>
+                <figure>
+                    <img src="../img/selector-universal.jpg" alt="Uso selector universal" width="607" height="314">
+                    <figurecaption>Otros usos selector universal</figurecaption>
+                </figure>
+            </article>
+
+            <article>
+                <h2>La importancia de un espacio y un punto</h2>
+                <p>Un espacio lo cambia todo.</p>
+                <p><strong>a .clase</strong> Seleccionamos los elementos de la clase .clase descendientes de a</p>
+                <p><strong>a.clase</strong> Seleccionamos los a de la clase .clase</p>
+                <p><strong>a, .clase</strong> Seleccionamos los a y los elementos de la clase .clase</p>
+            </article>
+
+            <article>
+                <h2>Especificidad</h2>
+                <p>
+                    Viendo todo lo anterior nos damos cuenta de todo lo específicos que podemos ser, tenemos descendientes, de hijos, de hermanos, de hermanos adyacentes, etc
+                </p>
             </article>
         </section>
     </main>
