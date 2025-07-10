@@ -58,8 +58,74 @@
             <article>
                 <h2>Pseudoclases</h2>
                 <p>
-                    Las pseudoclases
+                    Las pseudoclases se utilizan para hacer referencia a elementos HTML que tengan un cierto comportamiento concreto. Se definen añadiendo <strong>2 puntos ( : )</strong> antes del nombre  de la pseudoclase concreta.
                 </p>
+                <figure>
+                    <img src="../img/pseudoclase.jpg" alt="Esquema pseudoclases" width="557" height="198">
+                    <figurecaption>Esquema sintaxis pseudoclases</figurecaption>
+                </figure>
+                <p>
+                    De esta forma, podremos seleccionar elementos que en principio parecen iguales, pero tienen diferentes características de comportamiento.
+                </p>
+            </article>
+
+            <article>
+                <h2>Pseudoclases de hijos</h2>
+                <p>
+                    Lo usaremos para poder seleccionar cualquier hijo de cualquier elemento sea del tipo que sea.
+                </p>
+                <ul>
+                    <li><strong>:first-child </strong> Va a seleccionar el primer hijo.</li>
+                    <li><strong>:last-child </strong> Va a seleccionar el último hijo.</li>
+                </ul>
+                <p>Ejemplo:</p>
+                <figure>
+                    <img src="../img/pseudoclase-hijo1.jpg" alt="Pseudoclase primer y último hijo" width="381" height="266">
+                    <figurecaption>Ejemplo pseudoclase primer y último hijo</figurecaption>
+                </figure>
+                <p>La primera sentencia seleccionará el <strong>strong que sea primer hijo</strong>.</p>
+                <p>La segunda sentencia seleccionará el <strong>strong que sea último hijo</strong>.</p>
+                <figure>
+                    <img src="../img/pseudoclase-hijo2.jpg" alt="Ejemplo uso pseudoclase hijo">
+                    <figurecaption>Ejemplo pseudoclase primer y último hijo</figurecaption>
+                </figure>
+                <h3>Otras pseudoclases de hijos</h3>
+                <ul>
+                    <li><strong>:nth-child(n) </strong> Selecciona el enésimo hijo dónde n va a ser un número</li>
+                    <li><strong>:nth-last-child(n) </strong> Selecciona el enésimo hijo pero empezando a contar desde el final</li>
+                    <li><strong>:nth-child(2n) </strong> Esto va a seleccionar los elementos 2*1, 2*2, 2*3, ... es decir los elementos 2, 4, 6, ... El 2 puede cambiarse y puede ser un 3 para seleccionar de 3 en 3...</li>
+                    <li><strong>:nth-child(2n+1) </strong> Esto seleccionara los elementos 2n+1, es una expresion que puede ser modificada. En este caso seleccionará los elementos 2*0+1 (el 1º), 2*1+1 (el 3º), ... Con este ejemplo seleccionamos los impares mientras que con 2n seleccionabamos los pares.</li>
+                    <li><strong>:nth-child(odd) </strong> Selecciona los elementos impares</li>
+                    <li><strong>:nth-child(even) </strong> Selecciona los elementos pares</li>
+                </ul>
+                <p>
+                    La pseudoclase :nth-child(A) permite especificar el elemento hijo deseado, simplemente estableciendo su número en el parámetro A. No obstante, hay que tener en cuenta que el parámetro A no es sólo un número, sino que es posible escribir ciertas expresiones.
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-hijo3.jpg" alt="Más pseudoclases de hijos" width="728px" height="250px">
+                    <figurecaption>Más pseudoclases de hijo</figurecaption>
+                </figure>
+                <p>
+                    <pre>
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#..."&gt;Element 1&lt;/a&gt;&lt;/li&gt;    /* li:first-child a {color: red;} */ <em>Selecciona al primer hijo li y el a lo pinta rojo</em>
+                            &lt;li&gt;&lt;a href="#..."&gt;Element 2&lt;/a&gt;&lt;/li&gt;    /* li:last-child a {color: pink;} */ <em>Selecciona al último hijo li y el a lo pinta rosa</em>
+                            &lt;li&gt;&lt;a href="#..."&gt;Element 3&lt;/a&gt;&lt;/li&gt;    /* li:nth-child(3) a {color: yellow;} */ <em>Selecciona al tercer hijo li y el a lo pinta amarillo</em>
+                            &lt;li&gt;&lt;a href="#..."&gt;Element 4&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    </pre>
+                </p>
+                <p>
+                    La pseudoclase funcional :nth-last-child(A) funciona de forma muy similar a la anterior, permitiendo también indicarle un parámetro A donde específicar una expresión o número para indicar el hijo concreto. La diferencia respecto a la anterior, es que comenzamos a contar desde el final.
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-hijo4.jpg" alt="Ejemplo otras pseudoclases hijo" width="520px" height="288px">
+                    <figurecaption>Ejemplo más pseudoclases de hijo</figurecaption>
+                </figure>
+            </article>
+
+            <article>
+                <h2>Pseudoclases de hijos según tipo de elemento</h2>
             </article>
         </section>
     </main>
