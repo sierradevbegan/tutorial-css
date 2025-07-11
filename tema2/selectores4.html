@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial CSS Selectores Parte 4</title>
+    <meta name="description" content="Tutorial de CSS donde aprenderemos a dar estilo a nuestras páginas web.">
+    <link rel="stylesheet" href="../css/estilo.css">
+  
+    <!-- Favicon y theme-color  -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="../img/cabecera/css-logo.png" alt="Logo CSS" width="200" height="210">
+            <img src="../img/cabecera/titulo.png" alt="Titulo" width="714" height="110">
+        </div>
+        <p><a href="../index.html"><strong>INDICE</strong></a> / TEMA 2</p>
+        <ul>
+            <li><a href="selectores1.html">Selectores Parte 1</a></li>
+            <li><a href="selectores2.html">Selectores Parte 2</a></li>
+            <li><a href="selectores3.html">Selectores Parte 3</a></li>
+            <li>Selectores Parte 4</li>
+        </ul>
+        <hr>
+    </header>
+
+    <main>
+        <h1>Selectores (Parte 4)</h1>
+        <section>
+            <ul>
+                <li>Pseudoclases de formularios</li>
+                <li>Pseudoelementos</li>
+                <li>Resolución Ejercicios Selectores II</li>
+                <li>Resolución Ejercicios Selectores III</li>
+            </ul>
+        </section>
+        <section>
+            <article>
+                <h2>Pseudoselectores de formularios</h2>
+                <p>
+                    Existe una serie de pseudoclases en CSS que pueden ser utilizadas para usar en formularios de una página web. Estas pseudoclases permiten seleccionar elementos para darle estilo dependiendo de temas relacionados con los formularios o los campos que están en el interior de un formulario.
+                </p>
+                <p><em>- Los vamos a dividir en 3 clases:</em></p>
+                <ul>
+                    <li><strong>Pseudoclases de interacción en formularios: </strong> Seleccionar elementos cuando cambia el estado de un elemento.</li>
+                    <li><strong>Pseudoclases de estado en formularios: </strong> Seleccionar elementos cuando se encuentran en un estado concreto.</li>
+                    <li><strong>Pseudoclases de validación: </strong> Seleccionar elementos si cumplen o no un cierto criterio de validación.</li>
+                </ul>
+                <article>
+                <h3>Pseudoclases de interacción en formularios</h3>
+                <p>
+                    <strong>- :checked </strong> para seleccionar aquellos input de tipo radio o checkbox que estén marcado/s.
+                </p>
+                <p>
+                    <strong>- :indeterminate </strong> Selecciona el elemento cuando la casilla está en un estado indeterminado.
+                </p>
+                <h4>:checked</h4>
+                <p>
+                    La pseudoclase :checked en CSS se utiliza para aplicar estilos a elementos de formulario (como checkboxes y radiobuttons) cuando están seleccionados o marcados por el usuario. En otras palabras, se aplica cuando el atributo checked del elemento es verdadero.
+                </p>
+                <figure>
+                    <img src="../img/pseudoselector-formulario.jpg" alt="Pseudoselector formulario checked" width="413px" height="143px">
+                    <figurecaption>Ejemplo de uso de pseudoselector formulario checked</figurecaption>
+                </figure>
+                <p>
+                    Los input de tipo checkbox o radiobutton son nativos del navegador, es decir son renderizados por el propio motor del navegador a los cuales no se les van a aplicar todas las reglas css que se le aplican a otros elementos, por ejemplo el color de fondo no se va a poder de forma normal. Ya veremos como cambiar los checkbox, radiobutton y select más adelante.
+                </p>
+                <p>
+                    Sí nos va a permitir cambiar los <em>label o el span</em> de los checkbox o radiobutton que esten marcados y aplicarle algún estilo.
+                </p>
+                <figure>
+                    <img src="../img/pseudoselector-formulario-checked.jpg" alt="Pseudoselector formulario checked" width="965px" height="445px">
+                    <figurecaption>Ejemplo de uso de pseudoselector formulario checked 2</figurecaption>
+                </figure>
+                <p>El label de los checkbox que estén activos los pones la fuente azul.</p>
+                <figure>
+                    <img src="../img/pseudoselector-formulario-checked2.jpg" alt="Pseudoselector formulario checked" width="656px" height="654px">
+                </figure>
+                <p><em>Otros usos:</em></p>
+                <p>
+                    La pseudoclase :checked también puede usarse con elementos radio y con las opciones dentro de un elemento &lt;select&gt;. Por ejemplo, podrías cambiar el estilo de una opción seleccionada en un menú desplegable: 
+                    <pre>
+                        option:checked {
+                            font-weight: bold;
+                            color: green;
+                        }
+                    </pre>
+                    Este código haría que la opción seleccionada en un menú desplegable aparezca en negrita y de color verde.
+                </p>
+
+                <h4>:indeterminate</h4>
+                <p>
+                    La pseudoclase :indeterminate en CSS se utiliza para seleccionar elementos de formulario (como input[type="checkbox"], input[type="radio"], y progress) cuyo estado es indeterminado. Esto ocurre cuando un checkbox o radio button no está ni checked ni unchecked, o cuando un elemento &lt;progress&gt; no tiene un valor definido.
+                </p>
+                <p><em>Ejemplos:</em></p>
+                <ol>
+                    <li><strong>Checkbox indeterminado: </strong> Un input[type="checkbox"] cuyo atributo indeterminate se establece a true mediante JavaScript. Un input type="checkbox" puede tener su propiedad indeterminate establecida a true mediante JavaScript. Esto puede ocurrir cuando un checkbox representa un estado "parcialmente seleccionado" en un grupo de elementos.</li>
+                    <li><strong>Radio buttons indeterminados: </strong> Varios input[type="radio"] con el mismo atributo name pero ninguno con el atributo checked. Si tienes un grupo de radio buttons con el mismo nombre, y ninguno de ellos tiene el atributo checked establecido, todos pueden ser considerados indeterminados.</li>
+                    <li><strong>Elemento progress indeterminado: </strong>Un elemento &lt;progress&gt; sin un valor definido, mostrando una animación de carga continua. Una barra de progreso que no tiene un valor definido (o su valor es negativo) se considera indeterminada y puede ser estilizada con :indeterminate. (<progress></progress>)</li>
+                </ol>
+                <figure>
+                    <img src="../img/pseudoselector-formulario-indeterminate.jpg" alt="Pseudoselector formulario indeterminate" width="647px" height="266px">
+                    <figurecaption>Ejemplo de uso de pseudoselector formulario indeterminate</figurecaption>
+                </figure>
+                <p><em>Explicación:</em></p>
+                <ul>
+                    <li>El primer selector aplica un fondo amarillo a cualquier checkbox que tenga su propiedad indeterminate establecida a true.</li>
+                    <li>El segundo selector aplica un fondo rojo a cualquier elemento &lt;progress&gt; que sea indeterminado, es decir, que no tenga un valor definido o que su valor sea negativo. </li>
+                </ul>
+                <p>
+                    En resumen, la pseudoclase :indeterminate es útil para aplicar estilos específicos a elementos de formulario que se encuentran en un estado indeterminado, lo que puede ayudar a comunicar visualmente este estado especial al usuario. 
+                </p>
+                <p><strong>Etiqueta &lt;progress&gt;</strong></p>
+                <p>
+                    La etiqueta &lt;progress&gt; en HTML se usa para mostrar el progreso de una tarea. Visualmente, se presenta como una barra de progreso, ya sea horizontal o vertical, y su contenido dependerá de cómo se defina en el código HTML. Básicamente, indica el avance de una tarea, mostrando un porcentaje o un valor específico, y su apariencia puede variar según el navegador. 
+                </p>
+                <p>
+                    Estructura básica:
+                    <pre>
+                        &lt;progress value="50" max="100"&gt;&lt;/progress&gt;
+                        <progress value="50" max="100"></progress>
+                    </pre>
+                </p>
+                <ul>
+                    <li><strong>value: </strong> Este atributo indica el valor actual del progreso. En este ejemplo, es 50.</li>
+                    <li><strong>max: </strong> Este atributo indica el valor máximo del progreso. Aquí, es 100. </li>
+                </ul>
+                <p>
+                    Si el atributo value es igual a 50 y el max es 100, la barra mostrará el 50% de progreso. 
+                </p>
+                <p>
+                    <em>Otras formas de usarla:</em>
+                </p>
+                <p>
+                    <strong>Sin atributos value y max: </strong> Si no se especifica value y max, se mostrará un indicador de progreso indefinido (una barra animada sin valor específico).
+                </p>
+                <p>
+                    <strong>JavaScript: </strong> Puedes usar JavaScript para actualizar dinámicamente los valores de value y max según el progreso de una tarea. 
+                </p>
+                <figure>
+                    <img src="../img/pseudoselector-formulario-indeterminate2.jpg" alt="Ejemplo de uso de pseudoselector formulario indeterminate">
+                    <figurecaption>Ejemplo de uso de pseudoselector formulario indeterminate</figurecaption>
+                </figure>
+                <p>En este ejemplo, la barra de progreso se actualiza cada segundo hasta llegar al 100%.</p>
+                <p><strong>Consideraciones:</strong></p>
+                <ul>
+                    <li>La etiqueta &lt;progress&gt; es un elemento de la especificación HTML5 y es compatible con la mayoría de los navegadores modernos.</li>
+                    <li>La apariencia visual de la barra de progreso puede variar entre navegadores, ya que cada uno puede tener su propia implementación de estilos.</li>
+                    <li>Para un mayor control sobre la apariencia, puedes utilizar CSS para personalizar el estilo de la barra de progreso.</li>
+                </ul>
+                </article>
+                <article>
+                <h3>Pseudoclases de estado en formularios</h3>
+                <p>
+                    Existen varias pseudoclases para detectar si un campo de un formulario está activado o desactivado, o cierta información relacionada con su estado.
+                </p>
+                <figure>
+                    <img src="../img/pseudoselector-formulario-de-estado.jpg" alt="Pseudoselector de estados" width="577px" height="255px">
+                    <figurecaption>Ejemplo de uso de pseudoselector formulario de estado</figurecaption>
+                </figure>
+                </article>
+
+            </article>
+        </section>
+    </main>
+    
+    <footer>
+        <hr>
+        <p><a href="../index.html"><strong>INDICE</strong></a> / TEMA 2</p>
+        <ul>
+            <li><a href="selectores1.html">Selectores Parte 1</a></li>
+            <li><a href="selectores2.html">Selectores Parte 2</a></li>
+            <li><a href="selectores3.html">Selectores Parte 3</a></li>
+            <li>Selectores Parte 4</li>
+        </ul>
+    </footer>
+</body>
+</html>
