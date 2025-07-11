@@ -126,6 +126,190 @@
 
             <article>
                 <h2>Pseudoclases de hijos según tipo de elemento</h2>
+                <p>
+                    En los casos anteriores, seleccionamos elementos independientemente de que tipo de elemento sea. Simplemente, hacemos caso a la posición donde está ubicado. Y en algún caso, si no coincide la posición con el tipo de elemento especificado en el selector, simplemente no lo selecciona.
+                </p>
+                <p>
+                    Una forma de actuar, quizás, más predecible para nosotros, es que queramos hacer referencia sólo a elementos del mismo tipo, ignorando el resto. Para ello, utilizaremos los selectores siguientes, análogos a los que ya hemos visto, pero haciendo referencia solo a elementos del mismo tipo.
+                </p>
+                <p>
+                    <strong>:first-of-type </strong> Selecciona el 1º de este tipo
+                </p>
+                <p>
+                    <strong>:last-of-type </strong> Selecciona el último de este tipo
+                </p>
+                <p>
+                    Por ejemplo, la pseudoclase :first-of-type es la análoga a :first-child, sólo que tendrá en cuenta sólo elementos de su mismo tipo. Observa el siguiente ejemplo donde no sólo tenemos  &lt;div&gt;, sino que también tenemos un  &lt;p&gt;.
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-hijo-tipo.jpg" alt="Pseudoclase hijo tipo de elemento" width="269px" height="351px">
+                    <figurecaption>Ejemplo más pseudoclases de hijo según el tipo de elemento</figurecaption>
+                </figure>
+                <p>
+                    <strong>.container div:first-of-type {...} </strong> Selecciona el primer div que sea descendiente de .container (Element 1)
+                </p>
+                <p>
+                    <strong>.container p:first-of-type {...} </strong> Selecciona el primer p que sea descendiente de .container (Element 3)
+                </p>
+                <p>
+                    <strong>.container :first-of-type {...} </strong> Selecciona los 2 anteriores, es decir, selecciona todos los elementos que sean 1º de su tipo (El primer div y el primer p, en este caso)
+                </p>
+                <h3>Otras pseudoclases de hijos según el tipo de elemento</h3>
+                <p>
+                    <strong>:nth-of-type(n) </strong> Selecciona el enésimo elemento de dicho tipo
+                </p>
+                <p>
+                    <strong>:nth-last-of-type(n) </strong> Selecciona el enésimo elemento de dicho tipo empezando a contar desde el final
+                </p>
+                <p>
+                    La pseudoclase :nth-of-type(A) es la análoga a :nth-child(A). Se trata de una pseudoclase funcional que admite pasar parámetros, donde le podemos indicar un número (o cierta expresión) para ser mucho más específicos a la hora de seleccionar elementos del mismo tipo.
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-hijo-tipo2.jpg" alt="Pseudoclase hijo segun tipo de elemento" width="640px" height="279px">
+                    <figurecaption>Ejemplo más pseudoclases de hijo según el tipo de elemento</figurecaption>
+                </figure>
+                <p>
+                    La pseudoclase :nth-last-of-type(A) es la análoga a :nth-last-child(A). Veamos un nuevo ejemplo sobre el ejercicio anterior, utilizando ahora estas últimas pseudoclases que hemos visto.
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-hijo-tipo3.jpg" alt="Pseudoclase hijo segun tipo de elemento 3">
+                    <figurecaption>Ejemplo más pseudoclases de hijo según el tipo de elemento 3</figurecaption>
+                </figure>
+                <p>
+                    En este gráfico, se puede ver como strong:nth-of-type(2) selecciona el segundo elemento strong en ambos casos, a pesar de que en el primero ocupa la tercera posición. En este caso se selecciona porque es el segundo elemento de su mismo tipo (&lt;strong&gt;).
+                </p>
+                <p>
+                    Por otro lado, strong:nth-last-of-type(1) hace una selección de forma inversa, empezando por el último elemento, por lo que elige el último elemento.
+                </p>
+                <p>
+                    <strong>:only-child </strong> Hijo único de cualquier tipo
+                </p>
+                <p>
+                    <strong>:only-of-type </strong> Hijo único de ese tipo concreto
+                </p>
+                <p>
+                    <strong>:empty </strong> Elemento sin hijos
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-hijo-tipo4.jpg" alt="Ejemplo only-child" width="830px" height="425px">
+                    <figurecaption>Ejemplo de only-child (Hijo único de cualquier tipo)</figurecaption>
+                </figure>
+                <p>
+                    Hijo único son tanto el ul como los a. Cada li genera un nivel de jerarquía y cada li solo tiene un hijo que son los a, por lo tanto cada es un hijo único. En el caso de que pondríamos <em>*:only-of-type</em> sería exactamente igual porque dentro de cada li solamente hay un a, mientras que...
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-hijo-tipo5.jpg" alt="Ejemplo de only-of-type" width="832px" height="397px">
+                    <figurecaption>Ejemplo de only-of-type (Hijo único de ese tipo concreto)</figurecaption>
+                </figure>
+                <p>
+                    En este caso seleccioname aquellos elementos que sean únicos de su tipo y que sean descendientes de section. Hace únicamente referencia a h2 (el único de su tipo dentro de de la jerarquía de section), porque p hay 2 (si borrasemos uno de los p seleccionaría el h2 y el p porque serían únicos de su tipo).
+                </p>
+                <p>
+                    En este momento si usáramos :empty no seleccionaría ninguno porque todos tienen hijos. Por ejemplo un p tiene contenido que es el texto. Una img, que es una etiqueta vacía, si sería seleccionada. :empty se usa muy poco o en otros contextos.
+                </p>
+            </article>
+
+            <article>
+                <h2>Pseudoclases de interacción</h2>
+                <p>
+                    Las pseudoclases de interacción se pueden utilizar en cualquier elemento, aunque lo más frecuente es usarlo en elementos interactivos como enlaces, botones o similares, y pueden seleccionar elementos cuando ocurre una cierta interacción por parte del usuario en ellos. 
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-interaccion.jpg" alt="Tipos de pseudoclases de interacción" width="762px" height="238px">
+                    <figurecaption>Tipos de pseudoclases de interacción</figurecaption>
+                </figure>
+                <p>
+                    <strong>:hover </strong> La primera de ellas, :hover, es muy útil e interesante, ya que permite aplicar estilos a un elemento justo cuando el usuario pasa el ratón sobre él. Es una de las pseudoclases más utilizadas. En mobile no existe porque no tienes un puntero, sería otra pseudoclase diferente.
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-interaccion-hover.jpg" alt="Pseudoclase de interacción hover" width="679px" height="227px">
+                    <figurecaption>Pseudoclase de interacción hover</figurecaption>
+                </figure>
+                <p><em>Otro ejemplo:</em></p>
+                <figure>
+                    <img src="../img/pseudoclase-interaccion-hover2.jpg" alt="Ejemplo de uso de pseudoclase de interacción hover" width="832px" height="430px">
+                    <figurecaption>Ejemplo de uso de pseudoclase de interacción hover</figurecaption>
+                </figure>
+                <p>
+                    Cuando paso el ratón por encima del título h2 cambia su color a rojo, como es un elemento de bloque aunque lo pase por la derecha se marca de rojo.
+                </p>
+                <p>
+                    Otro ejemplo, si en vez de h2:hover hacemos <em>section:hover h2 {...}</em> y pasamos el ratón por cualquier lugar del section (que envuelve un h2 y dos p) el h2 cambiará el color a rojo.
+                </p>
+                <p>
+                    <strong>:active </strong> Por otro lado, la segunda pseudoclase, :active, permite resaltar los elementos que se encuentran activos, o lo que es lo mismo, elementos que <strong>están siendo pulsados en ese instante</strong> con el ratón por el usuario.
+                </p>
+                <p>
+                    <pre>
+                        a:active {
+                            border: 2px solid #ff0000;
+                            padding: 2px;
+                        }
+                    </pre>
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-interaccion-active.jpg" alt="Ejemplo de uso de pseudoclase de interacción active" width="830px" height="412px">
+                    <figurecaption>Ejemplo de uso de pseudoclase de interacción active</figurecaption>
+                </figure>
+                <p>En este caso mientras estoy pinchando dentro de section con el ratón el h2 se pone rojo, en cuanto suelto el boton del ratón vualve a ser negro.</p>
+                <p>
+                    <strong>:focus </strong> Cuando estamos posicionados en un elemento, se dice que ese elemento tiene el foco, mientras que al pulsar TAB y saltar a otro, solemos decir que pierde el foco. También es posible ganar o perder el foco pulsando con el ratón en un elemento. Normalmente va a servir para los input de un formulario.
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-interaccion-focus.jpg" alt="Ejemplo de uso de pseudoclase de interacción focus" width="468px" height="155px">
+                    <figurecaption>Ejemplo de uso de pseudoclase de interacción focus</figurecaption>
+                </figure>
+                <p><em>Otro ejemplo:</em></p>
+                <figure>
+                    <img src="../img/pseudoclase-interaccion-focus2.jpg" alt="Ejemplo de uso de pseudoclase de interacción focus2" width="837px" height="427px">
+                    <figurecaption>Ejemplo de uso de pseudoclase de interacción focus 2</figurecaption>
+                </figure>
+                <p>
+                    Cuando yo pincho dentro del input, el color de fondo del input se pone verde, si yo pincho fuera pierde el foco y vuelve a ser normal.
+                </p>
+                <p>
+                    <strong>:focus-within </strong> La pseudoclase :focus-within permite darle estilo no sólo al elemento que tiene el foco, sino también a los elementos contenedores relacionados con el elemento que gana el foco.
+                </p>
+                <figure>
+                    <img src="../img/pseudoclase-interaccion-focus-within.jpg" alt="Ejemplo de uso de pseudoclase de interacción focus-within" width="409px" height="248px">
+                    <figurecaption>Ejemplo de uso de pseudoclase de interacción focus-within</figurecaption>
+                </figure>
+                <figure>
+                    <img src="../img/pseudoclase-interaccion-focus-within2.jpg" alt="Ejemplo de uso de pseudoclase de interacción focus-within 2" width="830px" height="434px">
+                    <figurecaption>Ejemplo de uso de pseudoclase de interacción focus-within 2</figurecaption>
+                </figure>
+                <p>
+                    En cuanto cualquier elemento tiene el foco (que sea un elemento descendiente del formulario) el color entero del formulario se pondrá verde.
+                </p>
+            </article>
+
+            <article>
+                <h2>Pseudoselectores de ubicación</h2>
+                <p>
+                    Existen algunas pseudoclases orientadas a los enlaces o hipervínculos. En este caso, permiten cambiar los estilos dependiendo del comportamiento del enlace.
+                </p>
+                <p>
+                    <strong>:link </strong> Permite seleccionar enlaces a páginas que aún no han sido visitadas por el navegador del usuario, lo que puede ser interesante para personalizar el color de este tipo de enlaces. Por defecto, estos enlaces sin visitar suelen ser de color azul.
+                </p>
+                <p><em>Ejemplo:</em></p>
+                <p>
+                    <pre>
+                        a:link {
+                            color: blue; /* Color azul para enlaces no visitados */
+                            text-decoration: underline; /* Subrayado por defecto */
+                        }
+                    </pre>
+                </p>
+                <p>
+                    <strong>:visited </strong> También tenemos la pseudoclase :visited, que se utiliza para seleccionar y dar estilo a los enlaces que hayan sido visitados previamente en el navegador del usuario, es decir, que están en el historial del navegador. Es importante destacar que, por razones de seguridad y privacidad, los navegadores limitan las propiedades CSS que se pueden modificar con :visited. Generalmente, solo se permiten cambios en el color, color de fondo, color de borde y algunos aspectos del outline. Por defecto, estos enlaces suelen ser de color violeta.
+                </p>
+                <p>
+                    <pre>
+                        a:visited {
+                            color: purple; /* Enlaces visitados */
+                        }
+                    </pre>
+                </p>
             </article>
         </section>
     </main>
