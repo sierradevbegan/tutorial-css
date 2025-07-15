@@ -170,7 +170,7 @@
                 </ul>
                 </article>
                 <article>
-                <h3>Pseudoclases de estado en formularios</h3>
+                <h3>Pseudoclases DE ESTADO en formularios</h3>
                 <p>
                     Existen varias pseudoclases para detectar si un campo de un formulario está activado o desactivado, o cierta información relacionada con su estado.
                 </p>
@@ -178,8 +178,121 @@
                     <img src="../img/pseudoselector-formulario-de-estado.jpg" alt="Pseudoselector de estados" width="577px" height="255px">
                     <figurecaption>Ejemplo de uso de pseudoselector formulario de estado</figurecaption>
                 </figure>
+                    <p><strong>:enabled </strong> Utilizando la autoexplicativa pseudoclase :enabled, podemos seleccionar elementos que se encuentren activados (comportamiento por defecto)</p>
+                    <p><strong>:disabled </strong> Sin embargo, lo más interesante de este tema viene al poder darle estilo a elementos desactivados con la pseudoclase :disabled, donde se seleccionan los elementos a los que se le ha añadido el atributo disabled</p>
+                    <p><strong>:read-only </strong> La pseudoclase :read-only selecciona aquellos elementos input de un formulario que están marcados con el atributo de sólo lectura readonly. La diferencia entre un campo con atributo disabled y un campo con atributo readonly es que la información del campo con readonly se enviará a través del formulario, mientras que la del campo con disabled no se enviará.</p>
+                    <p><strong>:read-write </strong> Por otro lado, la pseudoclase :read-write es muy útil para dar estilos a todos aquellos elementos que son editables por el usuario, sean campos de texto input o textarea.</p>
+                    <p><strong>:placeholder-show </strong> Con la pseudoclase :placeholder-shown se nos permite seleccionar y dar estilo a los elementos que están actualmente mostrando un placeholder.</p>
+
+                </article>
+                <article>
+                    <h3>Pseudoclases DE VALIDACIÓN en formularios</h3>
+                    <p>
+                        En HTML5 es posible dotar de capacidades de validación a los campos de un formulario, pudiendo interactuar con ellos desde Javascript o incluso desde CSS. Con estas validaciones podemos asegurarnos de que el usuario escribe en un campo de un formulario el valor esperado.
+                    </p>
+                    <figure>
+                        <img src="../img/pseudoselector-formulario-de-validacion.jpg" alt="Pseudoselector de Validación" width="501px" height="294px">
+                        <figurecaption>Ejemplo de uso de pseudoselector formulario de validación</figurecaption>
+                    </figure>
+                    <p><strong>:required </strong> Por lo general, los campos de un formulario son siempre opcionales. Para hacer obligatorio un campo, tenemos que indicar en el elemento HTML el atributo required, al cuál será posible darle estilo mediante la pseudoclase :required:</p>
+                    <p><strong>:optional </strong> Por otra parte, los campos opcionales son todos aquellos que no tienen el atributo required. Pueden seleccionarse con la pseudoclase :optional</p>
+                    <p><strong>:valid </strong> Actualmente, desde HTML5 se brinda un excelente soporte de validaciones desde el lado del cliente sin necesidad de Javascript
+                        <pre>&lt;input type="text" name="age" pattern="[0-9]+" /&gt;</pre>
+                    </p>
+                    <p><strong>:invalid </strong> De forma opuesta, se pueden seleccionar elementos y aplicar ciertos estilos si no se cumple el patrón de validación
+                        <pre>&lt;input type="text" name="age" pattern="[0-9]+" /&gt;</pre>
+                    </p>
+                    <p><strong>:in-range </strong> Lo ideal sería establecer un rango, algo que se suele hacer muy a menudo si tenemos campos numéricos de formulario mediante los atributos min y max
+                        <pre>&lt;input type="number" name="age" min="18" max="100" /&gt;</pre>
+                    </p>
+                    <p><strong>:out-of-range </strong> Lo contrario de lo anterior
+                        <pre>&lt;input type="number" name="age" min="18" max="100" /&gt;</pre>
+                    </p>
+                </article>
+            </article>
+
+            <article>
+                <h2>Pseudoelementos</h2>
+                <p>
+                    Los pseudoelementos son una característica de CSS que permite hacer referencias a «comportamientos virtuales no tangibles», dicho de otra forma, seleccionar y dar estilo a elementos que no existen en el HTML, o que no son un simple elemento en sí.
+                </p>
+                <p>
+                    La sintaxis de los pseudoelementos está precedida de dos puntos dobles (::) para diferenciarlos de las pseudoclases, las cuales sólo tienen dos puntos (:).
+                </p>
+                <figure>
+                    <img src="../img/pseudoelementos.jpg" alt="Sintaxis Pseudoelementos" width="734px" height="193px">
+                    <figurecaption>Sintaxis de los pseudoelementos</figurecaption>
+                </figure>
+                <figure>
+                    <img src="../img/pseudoelementos2.jpg" alt="Tipos de Pseudoelementos" width="664px" height="226px">
+                    <figurecaption>Tipos de pseudoelementos</figurecaption>
+                </figure>
+                <article>
+                    <p><strong>::content </strong> La propiedad content admite parámetros de diverso tipo, incluso concatenando información mediante espacios. Podemos utilizar varios tipos de contenido</p>
+                    <figure>
+                        <img src="../img/pseudoelemento-content.jpg" alt="Pseudoelemento content" width="710px" height="223px">
+                        <figurecaption>Pseudoelemento content</figurecaption>
+                    </figure>
+                    <p>
+                        Ten en cuenta que la propiedad content sólo funciona dentro de los pseudoelementos ::before y ::after que explicaremos a continuación. No puede utilizarse en otro lugar.
+                    </p>
                 </article>
 
+                <article>
+                    <p><strong>::before / ::after </strong> Los pseudoelementos ::before y ::after permiten hacer referencia a «justo antes del elemento» y «justo después del elemento», respectivamente. Además de selectores básicos como clase o id, combinadores, atributos o pseudoclases, puedes añadir un pseudoelemento, precedido por doble :.</p>
+                    <figure>
+                        <img src="../img/pseudoelemento-before-after.jpg" alt="Pseudoelemento before y after" width="603px" height="141px">
+                        <figurecaption>Pseudoelemento before y after</figurecaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <p><strong>Función attr() </strong> Es interesante recalcar la utilidad de la función CSS attr(A). Esta función se puede utilizar en la propiedad content para recuperar el valor del atributo HTML especificado en A. Veamos un ejemplo para clarificarlo, concatenándolo con un texto aplicado en la propiedad content</p>
+                    <figure>
+                        <img src="../img/pseudoelemento-funcion-attr.jpg" alt="Pseudoelemento Funcion attr()" width="472px" height="116px">
+                        <figurecaption>Pseudoelemento Funcion attr()</figurecaption>
+                    </figure>
+                    <p>
+                        Este pequeño ejemplo de código CSS, realiza una búsqueda de elementos que sean enlaces &lt;a&gt;, y posteriormente (::after) muestra un contenido de texto posterior donde, envuelto entre paréntesis, escribe el contenido del atributo href del enlace tratado.
+                    </p>
+                </article>
+            </article>
+
+            <article>
+                <h2>Pseudoelementos de resaltado</h2>
+                <p>
+                    Existe una serie de pseudoelementos orientados a la selección o resaltado de texto en un documento HTML mostrado a través de un navegador.
+                </p>
+                <figure>
+                    <img src="../img/pseudoelementos-resaltado.jpg" alt="Tipos de Pseudoelementos de resaltado" width="721px" height="224px">
+                    <figurecaption>Tipos de Pseudoelementos de resaltado</figurecaption>
+                </figure>
+                <article>
+                    <p><strong>::selection </strong> Cuando seleccionamos un fragmento de texto, el navegador suele aplicar un color de fondo que depende del sistema operativo, del tema, o similar.</p>
+                    <figure>
+                        <img src="../img/pseudoelemento-selection.jpg" alt="Pseudoelemento selection" width="415px" height="202px">
+                        <figurecaption>Pseudoelemento selection</figurecaption>
+                    </figure>
+                </article>
+            </article>
+
+            <article>
+                <h2>Pseudoelementos tipográficos</h2>
+                <p>
+                    Aunque ::before y ::after suelen ser los ejemplos de pseudoelementos más frecuentes, existen muchos otros pseudoelementos. Por ejemplo, dentro de una categoría de pseudoelementos tipográficos, podemos encontrar los pseudoelementos ::firstletter o ::first-line:
+                </p>
+                <figure>
+                    <img src="../img/pseudoelementos-tipografico.jpg" alt="Tipos de Pseudoelementos tipográficos" width="677px" height="182px">
+                    <figurecaption>Tipos de Pseudoelementos tipográficos</figurecaption>
+                </figure>
+                <figure>
+                    <img src="../img/pseudoelementos-tipografico2.jpg" alt="Uso de Pseudoelementos tipográficos" width="450px" height="246px">
+                    <figurecaption>Uso de Pseudoelementos tipográficos</figurecaption>
+                </figure>
+                <figure>
+                    <img src="../img/pseudoelementos-tipografico3.jpg" alt="Resultado de Pseudoelementos tipográficos" width="649px" height="200px">
+                    <figurecaption>Resultado de Pseudoelementos tipográficos</figurecaption>
+                </figure>
             </article>
         </section>
     </main>
